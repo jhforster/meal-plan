@@ -1,0 +1,501 @@
+:root {
+  color-scheme: light;
+  --paper: #f7f5f0;
+  --surface: #fffefa;
+  --ink: #20201e;
+  --muted: #716f69;
+  --line: #dedbd3;
+  --accent: #ad4d2d;
+  --accent-soft: #f2e3da;
+  --radius: 14px;
+  --content: 720px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header,
+main,
+footer {
+  width: min(calc(100% - 2rem), var(--content));
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: 2.25rem 0 1.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0.15rem;
+  font-family: ui-serif, Georgia, serif;
+  font-size: clamp(2.45rem, 12vw, 4.25rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+h3 {
+  margin: 2rem 0 0.8rem;
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  margin-bottom: 0.45rem;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.week-dates {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.wake-button {
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 42px;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.site-header .wake-button {
+  margin-top: 1rem;
+}
+
+.wake-button:not([hidden]) {
+  display: inline-flex;
+}
+
+.wake-button svg {
+  width: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.7;
+}
+
+.wake-button.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+main > section {
+  padding-top: 3rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 0.25rem;
+}
+
+.section-note {
+  margin-bottom: 0.1rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.day-list {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.day-row {
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 62px;
+  padding: 0.7rem 0.85rem;
+  text-decoration: none;
+}
+
+.day-row + .day-row {
+  border-top: 1px solid var(--line);
+}
+
+a.day-row {
+  transition: background-color 120ms ease;
+}
+
+a.day-row:active {
+  background: #f0eee8;
+}
+
+.day-name {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.today-label {
+  display: none;
+  margin-top: 0.1rem;
+  color: var(--accent);
+  font-size: 0.58rem;
+  letter-spacing: 0.07em;
+}
+
+.day-row.is-today {
+  box-shadow: inset 3px 0 var(--accent);
+}
+
+.day-row.is-today .today-label {
+  display: block;
+}
+
+.day-meal {
+  min-width: 0;
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.day-action {
+  color: var(--muted);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.day-action.cook {
+  color: var(--accent);
+}
+
+.day-off {
+  color: var(--muted);
+}
+
+.recipes {
+  padding-top: 4rem;
+}
+
+.text-button {
+  min-height: 38px;
+  padding: 0.4rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.recipe {
+  border-top: 1px solid var(--line);
+}
+
+.recipe:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.recipe summary {
+  position: relative;
+  display: grid;
+  gap: 0.2rem;
+  padding: 1.35rem 2.1rem 1.35rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.recipe summary::-webkit-details-marker {
+  display: none;
+}
+
+.recipe summary::after {
+  position: absolute;
+  top: 50%;
+  right: 0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  content: "";
+  transform: translateY(-65%) rotate(45deg);
+  transition: transform 150ms ease;
+}
+
+.recipe[open] summary::after {
+  transform: translateY(-20%) rotate(225deg);
+}
+
+.summary-day {
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.summary-title {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.summary-meta {
+  color: var(--muted);
+  font-size: 0.77rem;
+}
+
+.recipe-body {
+  padding: 0.25rem 0 2.5rem;
+}
+
+.recipe-body > :first-child {
+  margin-top: 0;
+}
+
+.recipe-note {
+  margin: 0.5rem 0 1.6rem;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  color: #5f3728;
+  font-size: 0.87rem;
+}
+
+.recipe-note strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--accent);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ingredients {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ingredients li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.53rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.ingredients strong {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  counter-reset: steps;
+  list-style: none;
+}
+
+.steps li {
+  position: relative;
+  min-height: 2.25rem;
+  margin-bottom: 1rem;
+  padding-left: 2.75rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  counter-increment: steps;
+}
+
+.steps li::before {
+  position: absolute;
+  top: -0.05rem;
+  left: 0;
+  display: grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--muted);
+  content: counter(steps);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.inline-link {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 650;
+  text-underline-offset: 0.2em;
+}
+
+.archive-section {
+  padding-bottom: 1rem;
+}
+
+.archive {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.archive summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.archive summary::-webkit-details-marker {
+  display: none;
+}
+
+.archive .eyebrow {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.archive-title {
+  display: block;
+  font-family: ui-serif, Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.archive-count,
+.archive p {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.archive p {
+  margin-bottom: 1.25rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0 2rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+footer a {
+  text-underline-offset: 0.2em;
+}
+
+@media (min-width: 600px) {
+  .site-header,
+  main,
+  footer {
+    width: min(calc(100% - 3rem), var(--content));
+  }
+
+  .site-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 4rem;
+  }
+
+  .site-header .wake-button {
+    margin-top: 0;
+  }
+
+  .day-row {
+    padding-inline: 1.15rem;
+  }
+
+  .recipe-body {
+    padding-right: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
