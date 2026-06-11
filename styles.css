@@ -5,11 +5,11 @@
   --ink: #20201e;
   --muted: #77746e;
   --line: #e8e5de;
-  --accent: #ad4d2d;
-  --accent-soft: #faf0eb;
-  --info: #3f716b;
-  --info-ink: #315a55;
-  --info-soft: #eef6f4;
+  --accent: #a75f47;
+  --accent-soft: #faf1ed;
+  --info: #68745a;
+  --info-ink: #4f5b43;
+  --info-soft: #f1f3ed;
   --radius: 14px;
   --content: 720px;
 }
@@ -195,20 +195,8 @@ a.day-row:active {
   text-transform: uppercase;
 }
 
-.today-label {
-  display: none;
-  margin-top: 0.1rem;
+.day-row.is-today .day-name {
   color: var(--accent);
-  font-size: 0.58rem;
-  letter-spacing: 0.07em;
-}
-
-.day-row.is-today {
-  box-shadow: inset 3px 0 var(--accent);
-}
-
-.day-row.is-today .today-label {
-  display: block;
 }
 
 .day-details {
@@ -310,17 +298,7 @@ a.day-row:active {
 }
 
 .recipe.is-today summary {
-  padding-left: 0.85rem;
-  background: linear-gradient(90deg, var(--accent-soft), transparent 72%);
-  box-shadow: inset 3px 0 var(--accent);
-}
-
-.recipe.is-today .summary-day::after {
-  margin-left: 0.45rem;
-  color: var(--accent);
-  content: "Today";
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
+  background: transparent;
 }
 
 .recipe summary::-webkit-details-marker {
@@ -370,7 +348,8 @@ a.day-row:active {
 }
 
 .recipe-body {
-  padding: 1rem 0.85rem 2.5rem;
+  width: 100%;
+  padding: 1rem 0 2.5rem;
 }
 
 .recipe-body > .wake-button {
@@ -543,7 +522,8 @@ footer a {
   }
 
   .recipe-body {
-    padding-right: 3rem;
+    width: min(calc(100% - 3rem), 640px);
+    margin-inline: auto;
   }
 }
 
