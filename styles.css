@@ -7,9 +7,9 @@
   --line: #e8e5de;
   --accent: #a75f47;
   --accent-soft: #faf1ed;
-  --info: #68745a;
-  --info-ink: #4f5b43;
-  --info-soft: #f1f3ed;
+  --info: #6d7b57;
+  --info-ink: #526043;
+  --info-soft: #f1f4ec;
   --radius: 14px;
   --content: 720px;
 }
@@ -349,11 +349,11 @@ a.day-row:active {
 
 .recipe-body {
   width: 100%;
-  padding: 1rem 0 2.5rem;
+  padding: 0.65rem 0 2.5rem;
 }
 
 .recipe-body > .wake-button {
-  margin: 0 0 1.75rem;
+  margin: 0 0 1.2rem;
 }
 
 .recipe-body > :first-child {
