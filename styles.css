@@ -7,6 +7,9 @@
   --line: #e8e5de;
   --accent: #ad4d2d;
   --accent-soft: #faf0eb;
+  --info: #3f716b;
+  --info-ink: #315a55;
+  --info-soft: #eef6f4;
   --radius: 14px;
   --content: 720px;
 }
@@ -128,9 +131,9 @@ h3 {
 }
 
 .wake-button.active {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  color: var(--accent);
+  border-color: var(--info);
+  background: var(--info-soft);
+  color: var(--info);
 }
 
 main > section {
@@ -240,11 +243,11 @@ a.day-row:active {
 
 .day-extra {
   margin-top: 0.12rem;
-  color: var(--accent);
+  color: var(--info);
   font-size: 0.65rem;
   font-weight: 600;
   line-height: 1.25;
-  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--info) 35%, transparent);
   text-underline-offset: 0.16em;
 }
 
@@ -265,7 +268,7 @@ a.day-row:active {
 }
 
 .day-action.cook {
-  color: var(--accent);
+  color: var(--info);
 }
 
 .day-off {
@@ -306,13 +309,10 @@ a.day-row:active {
   list-style: none;
 }
 
-.recipe.is-today {
-  box-shadow: inset 3px 0 var(--accent);
-}
-
 .recipe.is-today summary {
   padding-left: 0.85rem;
   background: linear-gradient(90deg, var(--accent-soft), transparent 72%);
+  box-shadow: inset 3px 0 var(--accent);
 }
 
 .recipe.is-today .summary-day::after {
@@ -345,11 +345,15 @@ a.day-row:active {
 }
 
 .summary-day {
-  color: var(--accent);
+  color: var(--muted);
   font-size: 0.68rem;
   font-weight: 750;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.recipe.is-today .summary-day {
+  color: var(--accent);
 }
 
 .summary-title {
@@ -366,11 +370,11 @@ a.day-row:active {
 }
 
 .recipe-body {
-  padding: 0.25rem 0 2.5rem;
+  padding: 1rem 0.85rem 2.5rem;
 }
 
 .recipe-body > .wake-button {
-  margin: 0.15rem 0 1.5rem;
+  margin: 0 0 1.75rem;
 }
 
 .recipe-body > :first-child {
@@ -380,16 +384,16 @@ a.day-row:active {
 .recipe-note {
   margin: 0.5rem 0 1.6rem;
   padding: 0.9rem 1rem;
-  border-left: 3px solid var(--accent);
-  background: var(--accent-soft);
-  color: #5f3728;
+  border-left: 3px solid var(--info);
+  background: var(--info-soft);
+  color: var(--info-ink);
   font-size: 0.87rem;
 }
 
 .recipe-note strong {
   display: block;
   margin-bottom: 0.15rem;
-  color: var(--accent);
+  color: var(--info);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -452,7 +456,7 @@ a.day-row:active {
 }
 
 .inline-link {
-  color: var(--accent);
+  color: var(--info);
   font-size: 0.85rem;
   font-weight: 650;
   text-underline-offset: 0.2em;
