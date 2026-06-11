@@ -22,12 +22,6 @@
         <h1>Meal plan</h1>
         <p class="week-dates">June 11–17, 2026</p>
       </div>
-      <button class="wake-button" id="wake-button" type="button" hidden>
-        <svg aria-hidden="true" viewBox="0 0 24 24">
-          <path d="M12 3v2m6.36.64-1.42 1.42M21 12h-2M5 12H3m4.06-4.94L5.64 5.64M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 11v2m4.94-4.06 1.42 1.42m-11.3-1.42-1.42 1.42"/>
-        </svg>
-        <span>Keep awake</span>
-      </button>
     </header>
 
     <main>
@@ -65,14 +59,15 @@
             </span>
             <span class="day-action cook">Cook</span>
           </a>
-          <a class="day-row" data-date="2026-06-14" href="#sunday">
+          <div class="day-row" data-date="2026-06-14">
             <span class="day-name">Sun <span class="today-label">Today</span></span>
             <span class="day-details">
-              <span class="day-meal">Chicken &amp; sweet potato wraps</span>
+              <a class="day-meal day-meal-link" href="#sunday">Chicken &amp; sweet potato wraps</a>
               <span class="day-timing"><strong>Already prepped</strong> · warm &amp; assemble</span>
+              <a class="day-extra" href="#sunday-pasta-prep"><strong>Also:</strong> assemble Tuesday’s pasta · 25 min</a>
             </span>
-            <span class="day-action">Assemble</span>
-          </a>
+            <span class="day-action cook">Prep</span>
+          </div>
           <a class="day-row" data-date="2026-06-15" href="#monday">
             <span class="day-name">Mon <span class="today-label">Today</span></span>
             <span class="day-details">
@@ -108,6 +103,12 @@
           </div>
           <button class="text-button" id="collapse-button" type="button">Collapse all</button>
         </div>
+        <button class="wake-button" id="wake-button" type="button" hidden>
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3v2m6.36.64-1.42 1.42M21 12h-2M5 12H3m4.06-4.94L5.64 5.64M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 11v2m4.94-4.06 1.42 1.42m-11.3-1.42-1.42 1.42"/>
+          </svg>
+          <span>Keep awake</span>
+        </button>
 
         <details class="recipe" id="thursday" data-date="2026-06-11" open>
           <summary>
@@ -184,16 +185,29 @@
           <summary>
             <span class="summary-day">Sunday</span>
             <span class="summary-title">Chicken &amp; sweet potato wraps</span>
-            <span class="summary-meta">15 min · plus pasta prep</span>
+            <span class="summary-meta">15 min · assemble</span>
           </summary>
           <div class="recipe-body">
-            <h3>Make dinner</h3>
             <ol class="steps">
               <li>Warm Thursday’s reserved chicken and sweet potatoes.</li>
               <li>Set out tortillas, remaining arugula, cheese, and a preferred sauce.</li>
               <li>Let everyone assemble wraps. Keep the kids’ version simple with chicken and cheese.</li>
             </ol>
-            <h3>Prep Tuesday’s pasta</h3>
+          </div>
+        </details>
+
+        <details class="recipe prep-recipe" id="sunday-pasta-prep" data-date="2026-06-14">
+          <summary>
+            <span class="summary-day">Sunday prep</span>
+            <span class="summary-title">Assemble Tuesday’s baked pasta</span>
+            <span class="summary-meta">25 min active · refrigerate until Tuesday</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-note">
+              <strong>Do ahead</strong>
+              Assemble this Sunday so Tuesday only requires baking.
+            </div>
+            <h3>Ingredients</h3>
             <ul class="ingredients">
               <li><span>Rigatoni plus penne</span><strong>2 lb total</strong></li>
               <li><span>Mild Italian sausage</span><strong>2 lb</strong></li>
@@ -204,6 +218,7 @@
               <li><span>Shredded mozzarella</span><strong>1 lb</strong></li>
               <li><span>Parmesan</span></li>
             </ul>
+            <h3>Do this</h3>
             <ol class="steps">
               <li>Cook pasta 2 minutes less than its package directions. Drain.</li>
               <li>Brown sausage and onion. Drain excess grease, then wilt in the spinach.</li>
@@ -243,7 +258,7 @@
               <li>Uncover and bake another 10–15 minutes, until bubbling and browned.</li>
               <li>Reserve enough for Wednesday dinner and lunches.</li>
             </ol>
-            <p><a class="inline-link" href="#sunday">See Sunday’s assembly steps</a></p>
+            <p><a class="inline-link" href="#sunday-pasta-prep">See Sunday’s assembly steps</a></p>
           </div>
         </details>
 

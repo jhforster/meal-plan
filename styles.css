@@ -115,10 +115,6 @@ h3 {
   font-weight: 650;
 }
 
-.site-header .wake-button {
-  margin-top: 1rem;
-}
-
 .wake-button:not([hidden]) {
   display: inline-flex;
 }
@@ -227,6 +223,10 @@ a.day-row:active {
   line-height: 1.2;
 }
 
+.day-meal-link {
+  text-decoration: none;
+}
+
 .day-timing {
   color: var(--muted);
   font-size: 0.67rem;
@@ -236,6 +236,20 @@ a.day-row:active {
 .day-timing strong {
   color: var(--ink);
   font-weight: 700;
+}
+
+.day-extra {
+  margin-top: 0.12rem;
+  color: var(--accent);
+  font-size: 0.65rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  text-underline-offset: 0.16em;
+}
+
+.day-extra strong {
+  font-weight: 750;
 }
 
 .day-off .day-timing strong {
@@ -353,6 +367,10 @@ a.day-row:active {
 
 .recipe-body {
   padding: 0.25rem 0 2.5rem;
+}
+
+.recipe-body > .wake-button {
+  margin: 0.15rem 0 1.5rem;
 }
 
 .recipe-body > :first-child {
@@ -514,10 +532,6 @@ footer a {
     justify-content: space-between;
     gap: 1rem;
     padding-top: 4rem;
-  }
-
-  .site-header .wake-button {
-    margin-top: 0;
   }
 
   .day-row {

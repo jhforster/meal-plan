@@ -15,12 +15,39 @@ document.querySelectorAll(`[data-date="${localDate}"]`).forEach((element) => {
   element.classList.add("is-today");
 });
 
-const todayRecipe = document.querySelector(`.recipe[data-date="${localDate}"]`);
-if (todayRecipe) {
+const todayRecipes = [...document.querySelectorAll(`.recipe[data-date="${localDate}"]`)];
+if (todayRecipes.length) {
   recipes.forEach((recipe) => {
-    recipe.open = recipe === todayRecipe;
+    recipe.open = todayRecipes.includes(recipe);
   });
 }
+
+function placeWakeButton(recipe) {
+  if (!wakeButton || !("wakeLock" in navigator)) {
+    return;
+  }
+
+  const target = recipe?.querySelector(".recipe-body");
+  if (!target) {
+    wakeButton.hidden = true;
+    return;
+  }
+
+  target.prepend(wakeButton);
+  wakeButton.hidden = false;
+}
+
+placeWakeButton(todayRecipes[0] || recipes.find((recipe) => recipe.open));
+
+recipes.forEach((recipe) => {
+  recipe.addEventListener("toggle", () => {
+    if (recipe.open) {
+      placeWakeButton(recipe);
+    } else if (wakeButton && recipe.contains(wakeButton)) {
+      placeWakeButton(recipes.find((candidate) => candidate.open));
+    }
+  });
+});
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", () => {
@@ -37,6 +64,9 @@ collapseButton?.addEventListener("click", () => {
     recipe.open = shouldOpen;
   });
   collapseButton.textContent = shouldOpen ? "Collapse all" : "Open all";
+  if (!shouldOpen) {
+    wakeButton.hidden = true;
+  }
 });
 
 async function requestWakeLock() {
@@ -59,7 +89,6 @@ function updateWakeButton() {
 }
 
 if ("wakeLock" in navigator && wakeButton) {
-  wakeButton.hidden = false;
   wakeButton.addEventListener("click", async () => {
     if (wakeLock && !wakeLock.released) {
       keepAwake = false;
