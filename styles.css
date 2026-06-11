@@ -199,6 +199,10 @@ a.day-row:active {
   color: var(--accent);
 }
 
+.day-row.is-today {
+  box-shadow: inset 3px 0 var(--accent);
+}
+
 .day-details {
   display: grid;
   min-width: 0;
