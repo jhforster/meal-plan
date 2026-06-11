@@ -171,8 +171,8 @@ main > section {
   grid-template-columns: 3.4rem minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.75rem;
-  min-height: 62px;
-  padding: 0.7rem 0.85rem;
+  min-height: 72px;
+  padding: 0.75rem 0.85rem;
   text-decoration: none;
 }
 
@@ -212,6 +212,12 @@ a.day-row:active {
   display: block;
 }
 
+.day-details {
+  display: grid;
+  min-width: 0;
+  gap: 0.22rem;
+}
+
 .day-meal {
   min-width: 0;
   font-family: ui-serif, Georgia, serif;
@@ -219,6 +225,21 @@ a.day-row:active {
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.2;
+}
+
+.day-timing {
+  color: var(--muted);
+  font-size: 0.67rem;
+  line-height: 1.25;
+}
+
+.day-timing strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.day-off .day-timing strong {
+  color: var(--muted);
 }
 
 .day-action {
