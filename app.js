@@ -40,11 +40,13 @@ function placeWakeButton(recipe) {
 placeWakeButton(todayRecipes[0] || recipes.find((recipe) => recipe.open));
 
 recipes.forEach((recipe) => {
-  recipe.addEventListener("toggle", () => {
-    if (recipe.open) {
+  recipe.querySelector("summary")?.addEventListener("click", () => {
+    if (!recipe.open) {
       placeWakeButton(recipe);
     } else if (wakeButton && recipe.contains(wakeButton)) {
-      placeWakeButton(recipes.find((candidate) => candidate.open));
+      setTimeout(() => {
+        placeWakeButton(recipes.find((candidate) => candidate.open));
+      }, 0);
     }
   });
 });
@@ -54,6 +56,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     const target = document.querySelector(link.getAttribute("href"));
     if (target instanceof HTMLDetailsElement) {
       target.open = true;
+      placeWakeButton(target);
     }
   });
 });
