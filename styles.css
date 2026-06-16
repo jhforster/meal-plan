@@ -102,6 +102,16 @@ h3 {
   font-size: 0.95rem;
 }
 
+.header-link {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: var(--info);
+  font-size: 0.74rem;
+  font-weight: 650;
+  text-decoration-color: color-mix(in srgb, var(--info) 38%, transparent);
+  text-underline-offset: 0.18em;
+}
+
 .wake-button {
   flex: 0 0 auto;
   align-items: center;
@@ -380,6 +390,10 @@ a.day-row:active {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.plan-note {
+  margin: 0 0 1rem;
 }
 
 .ingredients {

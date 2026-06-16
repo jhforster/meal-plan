@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbfaf7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Meal Plan">
+    <meta name="description" content="The Forster family meal-plan preview for next week.">
+    <title>Meal Plan Preview · June 18–24</title>
+    <link rel="icon" href="../icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Forster family</p>
+        <h1>Meal plan</h1>
+        <p class="week-dates">June 18–24, 2026</p>
+        <a class="header-link" href="../">back to current week</a>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="week-overview">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Next week</p>
+            <h2 id="week-overview">At a glance</h2>
+          </div>
+          <p class="section-note">4 cooks · Friday out</p>
+        </div>
+
+        <div class="recipe-note plan-note">
+          <strong>Before this starts</strong>
+          Use easy leftovers Tuesday and Wednesday. Freeze one pasta tray or portions, plus enough bean soup for Tuesday dinner.
+        </div>
+
+        <nav class="day-list" aria-label="Jump to a day's meal">
+          <a class="day-row" data-date="2026-06-18" href="#thursday">
+            <span class="day-name">Thu</span>
+            <span class="day-details">
+              <span class="day-meal">Pasta bake &amp; lemony collards</span>
+              <span class="day-timing"><strong>Already prepped</strong> · reheat &amp; quick sauté</span>
+            </span>
+            <span class="day-action">Reheat</span>
+          </a>
+          <div class="day-row day-off" data-date="2026-06-19">
+            <span class="day-name">Fri</span>
+            <span class="day-details">
+              <span class="day-meal">Eat out</span>
+              <span class="day-timing"><strong>No prep</strong></span>
+            </span>
+            <span class="day-action">Off</span>
+          </div>
+          <div class="day-row" data-date="2026-06-20">
+            <span class="day-name">Sat</span>
+            <span class="day-details">
+              <a class="day-meal day-meal-link" href="#saturday">Mustardy sausage, cabbage &amp; salt potatoes</a>
+              <span class="day-timing"><strong>Weekend cook</strong> · boil once, grill or skillet</span>
+              <a class="day-extra" href="#saturday-potato-prep"><strong>Also:</strong> reserve Monday’s potatoes · 2 min</a>
+            </span>
+            <span class="day-action cook">Cook</span>
+          </div>
+          <div class="day-row" data-date="2026-06-21">
+            <span class="day-name">Sun</span>
+            <span class="day-details">
+              <a class="day-meal day-meal-link" href="#sunday">Ginger-soy pork bowls</a>
+              <span class="day-timing"><strong>Cook once</strong> · rice cooker helps</span>
+              <a class="day-extra" href="#sunday-fried-rice-prep"><strong>Also:</strong> reserve Wednesday’s pork &amp; rice · 3 min</a>
+            </span>
+            <span class="day-action cook">Cook</span>
+          </div>
+          <a class="day-row" data-date="2026-06-22" href="#monday">
+            <span class="day-name">Mon</span>
+            <span class="day-details">
+              <span class="day-meal">Cheesesteak potato skillet</span>
+              <span class="day-timing"><strong>One shot</strong> · use reserved potatoes &amp; marinara</span>
+            </span>
+            <span class="day-action cook">Cook</span>
+          </a>
+          <a class="day-row" data-date="2026-06-23" href="#tuesday">
+            <span class="day-name">Tue</span>
+            <span class="day-details">
+              <span class="day-meal">Dumplings &amp; cucumber salad</span>
+              <span class="day-timing"><strong>Quick night</strong> · steam, sear, slice</span>
+            </span>
+            <span class="day-action">Easy</span>
+          </a>
+          <a class="day-row" data-date="2026-06-24" href="#wednesday">
+            <span class="day-name">Wed</span>
+            <span class="day-details">
+              <span class="day-meal">Pork &amp; edamame fried rice</span>
+              <span class="day-timing"><strong>Reserved base</strong> · fast skillet dinner</span>
+            </span>
+            <span class="day-action cook">Cook</span>
+          </a>
+        </nav>
+      </section>
+
+      <section class="recipes" aria-labelledby="recipes-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Cook from here</p>
+            <h2 id="recipes-title">Recipes &amp; reheats</h2>
+          </div>
+          <button class="text-button" id="collapse-button" type="button">Collapse all</button>
+        </div>
+        <button class="wake-button" id="wake-button" type="button" hidden>
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3v2m6.36.64-1.42 1.42M21 12h-2M5 12H3m4.06-4.94L5.64 5.64M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 11v2m4.94-4.06 1.42 1.42m-11.3-1.42-1.42 1.42"/>
+          </svg>
+          <span>Keep awake</span>
+        </button>
+
+        <details class="recipe compact" id="thursday" data-date="2026-06-18" open>
+          <summary>
+            <span class="summary-day">Thursday</span>
+            <span class="summary-title">Pasta bake &amp; lemony collards</span>
+            <span class="summary-meta">10 min active · reheat dinner</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-note">
+              <strong>Low-lift night</strong>
+              The kids are home during the day, so keep this to reheating plus one quick green side.
+            </div>
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Prepared pasta bake</span><strong>1 tray or portions</strong></li>
+              <li><span>Extra collard greens, chopped</span></li>
+              <li><span>Garlic, thinly sliced or minced</span><strong>2 cloves</strong></li>
+              <li><span>Lemon juice or apple cider vinegar</span></li>
+              <li><span>Olive oil, salt, pepper</span></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Reheat the pasta bake covered, either in the oven or microwave.</li>
+              <li>Warm olive oil in a skillet. Add garlic for 30 seconds, then add the collards and a pinch of salt.</li>
+              <li>Cook until tender, adding a splash of water if the pan gets dry.</li>
+              <li>Finish the greens with lemon juice or cider vinegar and black pepper.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="recipe" id="saturday" data-date="2026-06-20">
+          <summary>
+            <span class="summary-day">Saturday</span>
+            <span class="summary-title">Mustardy sausage, cabbage &amp; salt potatoes</span>
+            <span class="summary-meta">25 min active · 40 min total</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-note">
+              <strong>Before serving</strong>
+              Reserve about 2 lb cooked potatoes for Monday’s cheesesteak skillet.
+            </div>
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Salt potatoes</span><strong>5 lb bag</strong></li>
+              <li><span>Sweet sausage</span><strong>4 links</strong></li>
+              <li><span>Spicy sausage</span><strong>4 links</strong></li>
+              <li><span>Green cabbage, cut into wedges or thick slices</span><strong>about half the head</strong></li>
+              <li><span>Dijon mustard</span><strong>1/4 cup</strong></li>
+              <li><span>Apple cider vinegar or lemon juice</span><strong>3 tbsp</strong></li>
+              <li><span>Honey</span><strong>1 tbsp</strong></li>
+              <li><span>Fresh dill, chopped</span><strong>optional but good</strong></li>
+              <li><span>Butter or olive oil, salt, pepper</span></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li><strong>Thaw sausage ahead.</strong> Move it to the fridge Friday or Saturday morning.</li>
+              <li>Cook the full bag of salt potatoes in a large pot according to the bag directions. Drain and toss with butter or olive oil.</li>
+              <li>Whisk Dijon, vinegar or lemon, honey, dill, black pepper, and enough olive oil to loosen it. Keep the sauce on the side for the kids.</li>
+              <li>Grill or skillet-cook the sweet and spicy sausages, keeping them easy to tell apart.</li>
+              <li>Grill the cabbage wedges or sear them in a wide skillet until browned and tender-crisp. Season with salt and pepper.</li>
+              <li>Serve sausage, cabbage, and potatoes with the mustard sauce. Reserve Monday’s potatoes before seconds.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="recipe prep-recipe" id="saturday-potato-prep" data-date="2026-06-20">
+          <summary>
+            <span class="summary-day">Saturday prep</span>
+            <span class="summary-title">Reserve Monday’s potatoes</span>
+            <span class="summary-meta">2 min · chill for skillet</span>
+          </summary>
+          <div class="recipe-body">
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Before serving or right after dinner, set aside about 2 lb cooked salt potatoes.</li>
+              <li>Cool, cover, and refrigerate. They will crisp better Monday if they are cold.</li>
+            </ol>
+            <p><a class="inline-link" href="#monday">Use them in Monday’s cheesesteak potato skillet</a></p>
+          </div>
+        </details>
+
+        <details class="recipe" id="sunday" data-date="2026-06-21">
+          <summary>
+            <span class="summary-day">Sunday</span>
+            <span class="summary-title">Ginger-soy pork bowls</span>
+            <span class="summary-meta">30 min active · reserve for Wednesday</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-note">
+              <strong>Cook in batches</strong>
+              Three pounds of ground pork will brown better in two skillets or two batches.
+            </div>
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Ground pork</span><strong>3 lb</strong></li>
+              <li><span>Rice</span><strong>3 cups dry</strong></li>
+              <li><span>Frozen in-shell edamame</span></li>
+              <li><span>Green cabbage, thinly sliced</span><strong>remaining half head</strong></li>
+              <li><span>Cucumbers, sliced</span><strong>2</strong></li>
+              <li><span>Scallions, sliced</span><strong>1 bunch</strong></li>
+              <li><span>Garlic, minced</span><strong>4 cloves</strong></li>
+              <li><span>Fresh ginger, grated</span><strong>2 tbsp</strong></li>
+              <li><span>Soy sauce</span><strong>1/2 cup</strong></li>
+              <li><span>Rice vinegar</span><strong>1/4 cup</strong></li>
+              <li><span>Brown sugar or honey</span><strong>2 tbsp</strong></li>
+              <li><span>Sesame oil</span><strong>1 tbsp</strong></li>
+              <li><span>Lime juice, chili crisp</span><strong>for serving</strong></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Start the rice. Cook enough to serve tonight and reserve 4 cups cooked rice for Wednesday.</li>
+              <li>Stir together soy sauce, rice vinegar, brown sugar or honey, sesame oil, garlic, and ginger.</li>
+              <li>Brown the pork in two skillets or in batches. Pour off excess fat if needed.</li>
+              <li>Add the sauce and simmer 2–3 minutes, until glossy and well-coated.</li>
+              <li>Steam the edamame. Toss cabbage, cucumbers, and scallions with lime juice, a little rice vinegar, salt, and a drizzle of sesame oil.</li>
+              <li>Serve pork over rice with edamame and crunchy vegetables. Add chili crisp at the table.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="recipe prep-recipe" id="sunday-fried-rice-prep" data-date="2026-06-21">
+          <summary>
+            <span class="summary-day">Sunday prep</span>
+            <span class="summary-title">Reserve Wednesday’s pork &amp; rice</span>
+            <span class="summary-meta">3 min · chill uncovered first</span>
+          </summary>
+          <div class="recipe-body">
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Set aside about 1 lb cooked pork and 4 cups cooked rice before serving dinner.</li>
+              <li>Spread the rice in a shallow container so it cools quickly, then cover and refrigerate.</li>
+              <li>Refrigerate the pork separately so Wednesday’s fried rice comes together fast.</li>
+            </ol>
+            <p><a class="inline-link" href="#wednesday">Use this base in Wednesday’s fried rice</a></p>
+          </div>
+        </details>
+
+        <details class="recipe" id="monday" data-date="2026-06-22">
+          <summary>
+            <span class="summary-day">Monday</span>
+            <span class="summary-title">Cheesesteak potato skillet</span>
+            <span class="summary-meta">20 min active · one-shot dinner</span>
+          </summary>
+          <div class="recipe-body">
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Reserved cooked salt potatoes, smashed or halved</span><strong>about 2 lb</strong></li>
+              <li><span>Frozen Steak-umms</span><strong>about 1½–2 lb</strong></li>
+              <li><span>Bell peppers, sliced</span><strong>2</strong></li>
+              <li><span>Onion, sliced</span><strong>1</strong></li>
+              <li><span>Provolone</span><strong>6–8 slices</strong></li>
+              <li><span>Open jar marinara</span><strong>for spooning or dipping</strong></li>
+              <li><span>Olive oil, garlic powder, oregano, salt, pepper</span></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Crisp the cold potatoes in a large skillet with oil, salt, pepper, and garlic powder. Move to a plate.</li>
+              <li>Cook peppers and onions in the same skillet until browned and tender.</li>
+              <li>Add Steak-umms and cook, breaking them up as they soften. Season lightly with oregano and pepper.</li>
+              <li>Return potatoes to the skillet. Top with provolone and cover briefly until melted.</li>
+              <li>Warm marinara and serve it spooned over adult portions or alongside for dipping.</li>
+            </ol>
+            <p><a class="inline-link" href="#saturday-potato-prep">See Saturday’s potato prep</a></p>
+          </div>
+        </details>
+
+        <details class="recipe compact" id="tuesday" data-date="2026-06-23">
+          <summary>
+            <span class="summary-day">Tuesday</span>
+            <span class="summary-title">Dumplings &amp; cucumber salad</span>
+            <span class="summary-meta">15–20 min · quick night</span>
+          </summary>
+          <div class="recipe-body">
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Frozen dumplings</span></li>
+              <li><span>Cucumbers, thinly sliced</span><strong>2</strong></li>
+              <li><span>Frozen in-shell edamame</span><strong>optional side</strong></li>
+              <li><span>Cooked rice or microwave rice</span><strong>optional side</strong></li>
+              <li><span>Fruit or raw bell peppers</span><strong>optional kid side</strong></li>
+              <li><span>Soy sauce</span><strong>3 tbsp</strong></li>
+              <li><span>Rice vinegar</span><strong>2 tbsp</strong></li>
+              <li><span>Sesame oil</span><strong>1 tsp</strong></li>
+              <li><span>Honey or sugar</span><strong>1 tsp</strong></li>
+              <li><span>Sesame seeds, scallions, chili crisp</span><strong>optional</strong></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Cook dumplings from frozen according to the package. Steam-and-sear is ideal if the package gives that option.</li>
+              <li>Whisk soy sauce, rice vinegar, sesame oil, and honey or sugar.</li>
+              <li>Toss cucumbers with the dressing. Add sesame seeds and scallions if using.</li>
+              <li>Heat edamame, rice, fruit, or raw vegetables as needed so dinner feels complete without much work.</li>
+              <li>Serve chili crisp or extra soy-sesame dressing for adults.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="recipe" id="wednesday" data-date="2026-06-24">
+          <summary>
+            <span class="summary-day">Wednesday</span>
+            <span class="summary-title">Pork &amp; edamame fried rice</span>
+            <span class="summary-meta">20 min active · reserved base</span>
+          </summary>
+          <div class="recipe-body">
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Reserved cooked rice, cold</span><strong>about 4 cups</strong></li>
+              <li><span>Reserved ginger-soy pork</span><strong>about 1 lb</strong></li>
+              <li><span>Eggs</span><strong>4</strong></li>
+              <li><span>Edamame, shelled after steaming</span><strong>1–2 cups</strong></li>
+              <li><span>Scallions, sliced</span></li>
+              <li><span>Soy sauce</span><strong>2–3 tbsp</strong></li>
+              <li><span>Rice vinegar</span><strong>1 tbsp</strong></li>
+              <li><span>Sesame oil</span><strong>1 tsp</strong></li>
+              <li><span>Chili crisp</span><strong>for adults</strong></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Scramble eggs in a hot skillet or wok, then move them to a plate.</li>
+              <li>Add oil and the cold rice. Let it sit briefly so some grains crisp, then stir-fry.</li>
+              <li>Add pork and edamame; cook until hot.</li>
+              <li>Season with soy sauce, rice vinegar, and sesame oil. Fold eggs back in.</li>
+              <li>Finish with scallions. Add chili crisp at the table.</li>
+            </ol>
+            <p><a class="inline-link" href="#sunday-fried-rice-prep">See Sunday’s fried-rice prep</a></p>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>Draft for next week.</p>
+      <a href="#week-overview">Back to top</a>
+    </footer>
+  </body>
+</html>
