@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbfaf7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Meal Plan">
+    <meta name="description" content="The Forster family meal plan for the week.">
+    <title>Meal Plan · June 11–17</title>
+    <link rel="icon" href="../icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Forster family</p>
+        <h1>Meal plan</h1>
+        <p class="week-dates">June 11–17, 2026</p>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="week-overview">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">This week</p>
+            <h2 id="week-overview">At a glance</h2>
+          </div>
+          <p class="section-note">3 cooks · Friday out</p>
+        </div>
+
+        <nav class="day-list" aria-label="Jump to a day's meal">
+          <a class="day-row" data-date="2026-06-11" href="#thursday">
+            <span class="day-name">Thu</span>
+            <span class="day-details">
+              <span class="day-meal">Sheet-pan chicken</span>
+              <span class="day-timing"><strong>Prep ahead</strong> · chop &amp; marinate anytime</span>
+            </span>
+            <span class="day-action cook">Cook</span>
+          </a>
+          <div class="day-row day-off" data-date="2026-06-12">
+            <span class="day-name">Fri</span>
+            <span class="day-details">
+              <span class="day-meal">Eat out</span>
+              <span class="day-timing"><strong>No prep</strong></span>
+            </span>
+            <span class="day-action">Off</span>
+          </div>
+          <div class="day-row" data-date="2026-06-13">
+            <span class="day-name">Sat</span>
+            <span class="day-details">
+              <a class="day-meal day-meal-link" href="#saturday">Beach wraps &amp; quesadillas</a>
+              <span class="day-timing"><strong>Pack cold</strong> · easy beach dinner</span>
+              <a class="day-extra" href="#saturday-pasta-prep"><strong>Also:</strong> assemble Sunday’s pasta · 25 min</a>
+              <a class="day-extra" href="#saturday-bean-prep"><strong>Tonight:</strong> drain &amp; refrigerate soaked beans</a>
+            </span>
+            <span class="day-action cook">Prep</span>
+          </div>
+          <a class="day-row" data-date="2026-06-14" href="#sunday">
+            <span class="day-name">Sun</span>
+            <span class="day-details">
+              <span class="day-meal">Sausage &amp; ricotta baked pasta</span>
+              <span class="day-timing"><strong>Already prepped</strong> · bake when ready</span>
+            </span>
+            <span class="day-action cook">Bake</span>
+          </a>
+          <a class="day-row" data-date="2026-06-15" href="#monday">
+            <span class="day-name">Mon</span>
+            <span class="day-details">
+              <span class="day-meal">White bean &amp; ham hock soup</span>
+              <span class="day-timing"><strong>Start early</strong> · cooks all day</span>
+            </span>
+            <span class="day-action cook">Cook</span>
+          </a>
+          <a class="day-row" data-date="2026-06-16" href="#tuesday">
+            <span class="day-name">Tue</span>
+            <span class="day-details">
+              <span class="day-meal">Baked pasta &amp; raw vegetables</span>
+              <span class="day-timing"><strong>Already prepped</strong> · reheat &amp; slice</span>
+            </span>
+            <span class="day-action">Reheat</span>
+          </a>
+          <a class="day-row" data-date="2026-06-17" href="#wednesday">
+            <span class="day-name">Wed</span>
+            <span class="day-details">
+              <span class="day-meal">Soup &amp; grilled cheese</span>
+              <span class="day-timing"><strong>Already prepped</strong> · just reheat</span>
+            </span>
+            <span class="day-action">Reheat</span>
+          </a>
+        </nav>
+      </section>
+
+      <section class="recipes" aria-labelledby="recipes-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Cook from here</p>
+            <h2 id="recipes-title">Recipes &amp; reheats</h2>
+          </div>
+          <button class="text-button" id="collapse-button" type="button">Collapse all</button>
+        </div>
+        <button class="wake-button" id="wake-button" type="button" hidden>
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M12 3v2m6.36.64-1.42 1.42M21 12h-2M5 12H3m4.06-4.94L5.64 5.64M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 11v2m4.94-4.06 1.42 1.42m-11.3-1.42-1.42 1.42"/>
+          </svg>
+          <span>Keep awake</span>
+        </button>
+
+        <details class="recipe" id="thursday" data-date="2026-06-11" open>
+          <summary>
+            <span class="summary-day">Thursday</span>
+            <span class="summary-title">Sheet-pan lemon-garlic chicken</span>
+            <span class="summary-meta">20 min active · 35 min total</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-note">
+              <strong>Before serving</strong>
+              Reserve enough chicken and sweet potatoes for Sunday’s wraps.
+            </div>
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Chicken thighs, thawed</span><strong>about 4 lb</strong></li>
+              <li><span>Sweet potatoes, 1-inch pieces</span><strong>about 3 lb</strong></li>
+              <li><span>Brussels sprouts, halved</span><strong>2 lb</strong></li>
+              <li><span>Lemons</span><strong>2</strong></li>
+              <li><span>Garlic, minced</span><strong>4–5 cloves</strong></li>
+              <li><span>Arugula</span><strong>half the container</strong></li>
+              <li><span>Olive oil, oregano, garlic powder, salt, pepper</span></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li><strong>Heat oven to 425°F.</strong> Line two sheet pans.</li>
+              <li>Toss sweet potatoes and Brussels sprouts with oil, salt, pepper, and garlic powder.</li>
+              <li>Toss chicken with oil, juice of one lemon, garlic, oregano, salt, and pepper.</li>
+              <li>Divide between pans. Roast 25–35 minutes, rotating halfway, until the chicken is cooked and vegetables are browned.</li>
+              <li>Dress arugula with oil, lemon juice, salt, pepper, and Parmesan if using.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="recipe" id="saturday" data-date="2026-06-13">
+          <summary>
+            <span class="summary-day">Saturday</span>
+            <span class="summary-title">Beach wraps &amp; quesadilla wedges</span>
+            <span class="summary-meta">20 min · pack in a cooler</span>
+          </summary>
+          <div class="recipe-body">
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Reserved cooked chicken, chopped</span></li>
+              <li><span>Reserved roasted sweet potatoes</span></li>
+              <li><span>Arugula</span></li>
+              <li><span>Tortillas</span></li>
+              <li><span>Cheese</span></li>
+              <li><span>Honey mustard or ranch</span></li>
+              <li><span>Raw vegetables, fruit, ranch</span><strong>optional sides</strong></li>
+            </ul>
+            <h3>Adult wraps</h3>
+            <ol class="steps">
+              <li>Fill tortillas with chopped chicken, sweet potatoes, arugula, cheese, and a light amount of sauce.</li>
+              <li>Wrap tightly and cut in half. Keep extra sauce separate so the wraps do not get soggy.</li>
+            </ol>
+            <h3>Kid quesadilla wedges</h3>
+            <ol class="steps">
+              <li>Fill tortillas with finely chopped chicken and cheese. Add a thin layer of mashed sweet potato if wanted.</li>
+              <li>Pan-sear until crisp, cool slightly, and cut into easy-to-hold wedges.</li>
+            </ol>
+            <div class="recipe-note">
+              <strong>Pack cold</strong>
+              Keep wraps, quesadillas, cheese, chicken, and sauces in a cooler. Do not leave them unrefrigerated for more than two hours.
+            </div>
+          </div>
+        </details>
+
+        <details class="recipe prep-recipe" id="saturday-pasta-prep" data-date="2026-06-13">
+          <summary>
+            <span class="summary-day">Saturday prep</span>
+            <span class="summary-title">Assemble Sunday’s baked pasta</span>
+            <span class="summary-meta">25 min active · refrigerate overnight</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-note">
+              <strong>Do ahead</strong>
+              This batch needs two 9×13-inch baking dishes. Assemble both today so Sunday only requires baking.
+            </div>
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Rigatoni plus penne</span><strong>2 lb total</strong></li>
+              <li><span>Mild Italian sausage</span><strong>2 lb</strong></li>
+              <li><span>Onion, diced</span><strong>1</strong></li>
+              <li><span>Spinach</span><strong>8 oz</strong></li>
+              <li><span>Marinara</span><strong>2 jars</strong></li>
+              <li><span>Ricotta</span><strong>15 oz</strong></li>
+              <li><span>Shredded mozzarella</span><strong>1 lb</strong></li>
+              <li><span>Parmesan</span></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Cook pasta 2 minutes less than its package directions. Drain.</li>
+              <li>Spread about 1 cup from the <strong>second marinara jar</strong> across the bottoms of two 9×13-inch dishes.</li>
+              <li>Brown sausage and onion. Drain excess grease, wilt in the spinach, then stir in the <strong>entire first marinara jar</strong>.</li>
+              <li>Mix pasta, sauced sausage, ricotta, and half the mozzarella. Divide between the dishes.</li>
+              <li>Spoon the <strong>remaining second marinara jar</strong> over the pasta. Top with remaining mozzarella and Parmesan.</li>
+              <li>Cover and refrigerate until Sunday.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="recipe prep-recipe" id="saturday-bean-prep" data-date="2026-06-13">
+          <summary>
+            <span class="summary-day">Saturday night</span>
+            <span class="summary-title">Store soaked beans for Monday</span>
+            <span class="summary-meta">5 min · refrigerate</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-note">
+              <strong>After 8–12 hours soaking</strong>
+              Drain and rinse the beans, then refrigerate promptly in a covered container at 40°F or colder.
+            </div>
+            <ol class="steps">
+              <li>Drain and rinse the soaked beans thoroughly.</li>
+              <li>Transfer to a covered container and refrigerate until Monday.</li>
+              <li>Before cooking, discard the beans if they smell sour, feel slimy, or show unexpected bubbling.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="recipe" id="sunday" data-date="2026-06-14">
+          <summary>
+            <span class="summary-day">Sunday</span>
+            <span class="summary-title">Sausage &amp; ricotta baked pasta</span>
+            <span class="summary-meta">10 min active · 45 min total</span>
+          </summary>
+          <div class="recipe-body">
+            <ol class="steps">
+              <li>Take Saturday’s assembled pasta out while the oven heats to <strong>375°F</strong>.</li>
+              <li>Bake both dishes covered for about 30 minutes.</li>
+              <li>Uncover and bake another 10–15 minutes, until bubbling and browned.</li>
+              <li>Reserve enough pasta for Tuesday dinner and adult lunches.</li>
+            </ol>
+            <p><a class="inline-link" href="#saturday-pasta-prep">See Saturday’s assembly steps</a></p>
+          </div>
+        </details>
+
+        <details class="recipe" id="monday" data-date="2026-06-15">
+          <summary>
+            <span class="summary-day">Monday</span>
+            <span class="summary-title">White bean &amp; ham hock soup</span>
+            <span class="summary-meta">20 min active · start early</span>
+          </summary>
+          <div class="recipe-body">
+            <div class="recipe-note">
+              <strong>Use all the collards</strong>
+              The entire bunch goes into the soup. There are no leftover greens reserved for another dinner.
+            </div>
+            <h3>Ingredients</h3>
+            <ul class="ingredients">
+              <li><span>Cross-cut smoked ham hocks</span><strong>2½–3 lb / about 4–6 pieces</strong></li>
+              <li><span>Soaked white beans, drained and refrigerated</span><strong>2 lb dry before soaking</strong></li>
+              <li><span>Onions, diced</span><strong>2</strong></li>
+              <li><span>Carrots, diced</span><strong>4</strong></li>
+              <li><span>Celery stalks, diced</span><strong>4</strong></li>
+              <li><span>Garlic, minced</span><strong>4–5 cloves</strong></li>
+              <li><span>Prepared chicken broth</span><strong>8 cups</strong></li>
+              <li><span>Collard greens, chopped</span><strong>entire large bunch</strong></li>
+              <li><span>Cornbread mix</span><strong>2 boxes</strong></li>
+              <li><span>Jalapeños, chopped</span><strong>for 1 cornbread</strong></li>
+              <li><span>Bay leaves, thyme, black pepper</span></li>
+            </ul>
+            <h3>Do this</h3>
+            <ol class="steps">
+              <li>Sauté onions, carrots, and celery in oil for 8 minutes. Add garlic for the final minute.</li>
+              <li>Add ham hocks, beans, broth, bay leaves, thyme, pepper, and enough water to cover.</li>
+              <li><strong>Cook until tender:</strong> Instant Pot for 20–25 minutes plus natural release, or gently simmer on the stovetop for about 2–3 hours. Add more time if the ham hocks are not yet tender.</li>
+              <li>Remove ham hocks. Shred the usable meat and return it to the soup.</li>
+              <li>Stir in the entire bunch of collards and cook until tender. Taste before adding salt.</li>
+              <li>Prepare both boxes of cornbread mix. Leave one plain for the kids and stir chopped jalapeños into the other before baking.</li>
+            </ol>
+            <div class="recipe-note">
+              <strong>After dinner</strong>
+              Refrigerate enough soup for Wednesday and lunches. Freeze excess if the batch is especially large.
+            </div>
+            <p><a class="inline-link" href="#saturday-bean-prep">See Saturday’s bean-storage steps</a></p>
+          </div>
+        </details>
+
+        <details class="recipe compact" id="tuesday" data-date="2026-06-16">
+          <summary>
+            <span class="summary-day">Tuesday</span>
+            <span class="summary-title">Baked pasta &amp; raw vegetables</span>
+            <span class="summary-meta">10 min · reheat &amp; slice</span>
+          </summary>
+          <div class="recipe-body">
+            <ol class="steps">
+              <li>Reheat baked pasta, covered, in the oven or microwave.</li>
+              <li>Slice bell peppers and cucumbers. Serve with ranch alongside the pasta.</li>
+            </ol>
+          </div>
+        </details>
+
+        <details class="recipe compact" id="wednesday" data-date="2026-06-17">
+          <summary>
+            <span class="summary-day">Wednesday</span>
+            <span class="summary-title">Soup &amp; grilled cheese</span>
+            <span class="summary-meta">15 min · reheat</span>
+          </summary>
+          <div class="recipe-body">
+            <ol class="steps">
+              <li>Reheat Monday’s soup gently, adding a little water or broth if it has thickened.</li>
+              <li>Make grilled cheese sandwiches while the soup heats.</li>
+              <li>Freeze any remaining soup that will not be eaten promptly.</li>
+            </ol>
+            <p><a class="inline-link" href="#monday">See Monday’s soup recipe</a></p>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made for weeknight cooking.</p>
+      <a href="#week-overview">Back to top</a>
+    </footer>
+  </body>
+</html>
